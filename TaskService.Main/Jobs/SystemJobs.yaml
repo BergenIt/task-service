@@ -1,0 +1,16 @@
+SystemJobs:
+#  Простейшая системная задача:
+#    Interval: "0:10:00"
+#    JsonData:
+#        FilterContract: "test object"
+#        IdData: "12345QWERTY"
+#        IsData: true
+#    Schema:
+#        Id : int
+#        Messages: string[]
+#    Sender:
+#      Type: Grpc
+#      Router:
+#        Service: AuditService
+#        Method: GetAuditLogs
+#        Uri: http://user-service

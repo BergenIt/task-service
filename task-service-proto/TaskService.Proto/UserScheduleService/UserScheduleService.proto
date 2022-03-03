@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "TaskService.Proto/UserScheduleService/UserScheduleRequest.proto";
+import "TaskService.Proto/TaskKeyModel.proto";
+
+service UserScheduleService {
+    //Post
+    rpc CreateTask(CreateTaskRequest) returns (TaskKeyList);
+    //Post
+    rpc CreateRepeatedTask(CreateRepeatedTaskRequest) returns (TaskKeyList);
+
+    //Put
+    rpc RescheduleTask(RescheduleTaskRequest) returns (TaskKeyList);
+    //Put
+    rpc RescheduleTaskAsRepeated(RescheduleTaskAsRepeatedRequest) returns (TaskKeyList);
+
+    //Put
+    rpc PauseTask(PauseUserTaskRequest) returns (TaskKeyList);
+    //Put
+    rpc UnpauseTask(UnpauseUserTaskRequest) returns (TaskKeyList);
+
+    //Put
+    rpc ChangeTaskData(ChangeTaskDataRequest) returns (TaskKeyList);
+    //Delete
+    rpc CancelTask(CancelUserTaskRequest) returns (TaskKeyList);
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "google/protobuf/duration.proto";  
+import "google/protobuf/timestamp.proto";  
+
+message SystemTaskModel
+{
+    string Id = 1;
+
+    string Name = 2;
+
+    google.protobuf.Duration Interval = 3;
+    bool IsPaused = 4;
+
+    google.protobuf.Timestamp NextStart = 5;
+    google.protobuf.Timestamp LastStart = 6;
+}
+
+message SystemTaskList
+{
+    repeated SystemTaskModel SystemTasks = 1;
+
+    int32 CountItems = 2;
+}

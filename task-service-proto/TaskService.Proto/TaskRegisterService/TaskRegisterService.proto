@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "TaskService.Proto/TaskRegisterService/TaskRegisterRequest.proto";
+import "TaskService.Proto/TaskRegisterService/TaskRegisterLog.proto";
+
+service TaskRegisterService {
+    //Get
+    rpc GetScheduleUserTasks(GetScheduleUserTaskRequest) returns (ScheduleUserTaskList);
+    //Get
+    rpc GetExecutedUserTasks(GetExecutedUserTaskRequest) returns (ExecutedUserTaskList);
+}

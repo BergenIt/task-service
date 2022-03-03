@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "DatabaseExtension.Proto/Filters/Filter.proto";
+
+message GetExecutedUserTaskRequest
+{
+    DatabaseExtension.Filter Filter = 1;
+}
+
+message GetScheduleUserTaskRequest
+{
+    DatabaseExtension.Filter Filter = 1;
+}

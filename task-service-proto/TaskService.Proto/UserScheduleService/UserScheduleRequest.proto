@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "google/protobuf/duration.proto";  
+import "google/protobuf/timestamp.proto";  
+
+message CancelUserTaskRequest
+{
+    repeated string Ids = 1;
+}
+
+message PauseUserTaskRequest
+{
+    repeated string Ids = 1;
+}
+
+message UnpauseUserTaskRequest
+{
+    repeated string Ids = 1;
+}
+
+message ChangeTaskDataModel
+{
+    string Id = 1;
+    map<string, string> Data = 2;
+}
+
+message CreateTaskModel
+{
+    string JobType = 1;
+    map<string, string> Data = 2;
+    google.protobuf.Timestamp StartAt = 3;
+}
+
+message CreateRepeatedTaskModel
+{
+    string JobType = 1;
+    map<string, string> Data = 2;
+    google.protobuf.Timestamp StartAt = 3;
+    google.protobuf.Duration Interval = 4;
+    uint32 RepeatedCount = 5;
+}
+
+message RescheduleTaskModel
+{
+    string Id = 1;
+    google.protobuf.Timestamp StartAt = 2;
+}
+
+message RescheduleTaskAsRepeatedModel
+{
+    string Id = 1;
+    google.protobuf.Timestamp StartAt = 2;
+    google.protobuf.Duration Interval = 3;
+    uint32 RepeatedCount = 4;
+}
+
+message RescheduleTaskRequest
+{
+    repeated RescheduleTaskModel RescheduleTasks = 1;
+}
+
+message RescheduleTaskAsRepeatedRequest
+{
+    repeated RescheduleTaskAsRepeatedModel RescheduleRepeatedTasks = 1;
+}
+
+message CreateTaskRequest
+{
+    repeated CreateTaskModel CreateTasks = 1;
+}
+
+message CreateRepeatedTaskRequest
+{
+    repeated CreateRepeatedTaskModel CreateRepeatedTasks = 1;
+}
+
+message ChangeTaskDataRequest
+{
+    repeated ChangeTaskDataModel ChangeTaskDatas = 1;
+}

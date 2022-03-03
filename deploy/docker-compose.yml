@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  taskservice:
+    image: 
+        ${DOCKER_REGISTRY-}taskservice
+    env_file:
+        - dev-env/serilog.env
+        - dev-env/postgres.env
+        - dev-env/kestrel.env
+        - dev-env/elastic.env
+        - dev-env/infrastructure.env
+    build:
+      context: .
+      dockerfile: ../TaskService.Main/Dockerfile
+    ports:
+        - 617:80

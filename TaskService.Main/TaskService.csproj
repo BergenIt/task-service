@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<DockerfileContext>..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\deploy\deploy.dcproj</DockerComposeProjectPath>
+	<DocumentationFile>ProtobufClient.xml</DocumentationFile>
+	<UserSecretsId>0ca35502-f99d-4e94-8113-5e291e149a6a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<Protobuf ProtoRoot="..\task-service-proto\" Include="..\task-service-proto\TaskService.Proto/**/*.proto" OutputDir="$(IntermediateOutputPath)/%(RecursiveDir)" />
+	<Protobuf ProtoRoot="..\task-service-proto\" Include="..\task-service-proto\UserService.Proto/**/*.proto" GrpcServices="Client" OutputDir="$(IntermediateOutputPath)/%(RecursiveDir)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.42.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.3.3" />
+    <PackageReference Include="Quartz.Extensions.Hosting" Version="3.3.3" />
+    <PackageReference Include="Quartz.Serialization.Json" Version="3.3.3" />
+    <PackageReference Include="Npgsql" Version="6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskService.Core\TaskService.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TranslatorConfigs\*.yaml"> <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory> </Content>
+    <Content Include="TranslatorConfigs\*.json"> <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory> </Content>
+    <Content Include="Jobs\*.yaml"> <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory> </Content>
+    <Content Include="Jobs\*.json"> <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory> </Content>
+    <Content Include="*.sql"> <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory> </Content>
+  </ItemGroup>
+
+</Project>

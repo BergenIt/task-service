@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "TaskService.Proto/SystemTaskService/SystemTaskRequest.proto";
+import "TaskService.Proto/SystemTaskService/SystemTask.proto";
+import "TaskService.Proto/TaskKeyModel.proto";
+
+service SystemTaskService {
+  //Get
+  rpc GetSystemTasks(GetSystemTasksRequest) returns (SystemTaskList);
+
+  //Put
+  rpc ChangeSystemTaskInterval(ChangeSystemTaskIntervalRequest) returns (TaskKeyList);
+
+  //Put
+  rpc PauseSystemTask(PauseSystemTaskRequest) returns (TaskKeyList);
+
+  //Put
+  rpc UnpauseSystemTask(UnpauseSystemTaskRequest) returns (TaskKeyList);
+}

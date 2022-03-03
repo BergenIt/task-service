@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "TaskService.Proto/LifecycleIndexService/LifecycleIndexModel.proto";
+import "TaskService.Proto/LifecycleIndexService/LifecycleIndexRequest.proto";
+
+//Сервис работы с настройками политик жизненных цикла эластика
+service TaskLifecycleIndexService {
+    //Get
+    rpc GetTaskLifecycleIndex (GetLifecycleIndexRequest) returns (LifecycleIndicePage);
+    //Patch
+    rpc UpdateLifecycleIndex (LifecycleIndices) returns (LifecycleIndices);
+}

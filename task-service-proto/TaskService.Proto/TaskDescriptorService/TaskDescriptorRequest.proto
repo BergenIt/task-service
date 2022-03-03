@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "DatabaseExtension.Proto/Filters/Filter.proto";
+
+message GetTaskDescriptorsRequest {
+    DatabaseExtension.Filter Filter = 1;
+    TaskGroup TaskGroup = 2;
+}
+
+enum TaskGroup
+{
+    UserTask = 0;
+    SystemTask = 1;
+    ShadowTask = 2;
+}

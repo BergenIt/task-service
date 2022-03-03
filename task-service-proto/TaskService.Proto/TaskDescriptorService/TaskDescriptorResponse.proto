@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+message TaskDescriptors {
+    repeated TaskDescriptor TaskDescriptorList = 1;
+    int32 Count = 2;
+}
+
+message TaskDescriptor {
+    string JobName = 1;
+    string DataSchema = 2;
+}

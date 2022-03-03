@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TaskService.Proto", "task-service-proto\TaskService.Proto\TaskService.Proto.shproj", "{4A8244A8-F7BB-49D1-B693-54BAF877A885}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskService", "TaskService.Main\TaskService.csproj", "{1548EF18-39C0-4674-B823-FCC395B469B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskService.Core", "TaskService.Core\TaskService.Core.csproj", "{0137227B-AEA7-42EF-9B3F-3BCDA5B9C1C8}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "deploy", "deploy\deploy.dcproj", "{D99BC0C6-4316-4C19-93EE-B9B79E2AAF65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{3EF4E615-D8AE-4671-AE3E-ADE8077E4BDD}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseExtension", "database-extension\DatabaseExtension.csproj", "{474EA2EE-8A45-48F8-906D-3E2D76DF550B}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UserService.Proto", "task-service-proto\UserService.Proto\UserService.Proto.shproj", "{BFC15C60-C6E9-4058-9E17-0D5B3C21294F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DatabaseExtension.Proto", "task-service-proto\DatabaseExtension.Proto\DatabaseExtension.Proto.shproj", "{4A8244A8-F7BB-49D1-B693-54BAF877A785}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		task-service-proto\DatabaseExtension.Proto\DatabaseExtension.Proto.projitems*{4a8244a8-f7bb-49d1-b693-54baf877a785}*SharedItemsImports = 13
+		task-service-proto\TaskService.Proto\TaskService.Proto.projitems*{4a8244a8-f7bb-49d1-b693-54baf877a885}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1548EF18-39C0-4674-B823-FCC395B469B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1548EF18-39C0-4674-B823-FCC395B469B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1548EF18-39C0-4674-B823-FCC395B469B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1548EF18-39C0-4674-B823-FCC395B469B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0137227B-AEA7-42EF-9B3F-3BCDA5B9C1C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0137227B-AEA7-42EF-9B3F-3BCDA5B9C1C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0137227B-AEA7-42EF-9B3F-3BCDA5B9C1C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0137227B-AEA7-42EF-9B3F-3BCDA5B9C1C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99BC0C6-4316-4C19-93EE-B9B79E2AAF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99BC0C6-4316-4C19-93EE-B9B79E2AAF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99BC0C6-4316-4C19-93EE-B9B79E2AAF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99BC0C6-4316-4C19-93EE-B9B79E2AAF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{474EA2EE-8A45-48F8-906D-3E2D76DF550B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474EA2EE-8A45-48F8-906D-3E2D76DF550B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474EA2EE-8A45-48F8-906D-3E2D76DF550B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474EA2EE-8A45-48F8-906D-3E2D76DF550B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53296C12-05E4-4133-A6E5-DD9F8FFE77C8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+message FireAndForgetTaskModel {
+  string JobType = 1;
+  map<string, string> JobData = 2;
+}
+
+message FireAndForgetExistTaskRequest {
+  repeated string Ids = 1;
+}
+
+message FireAndForgetTaskRequest {
+  repeated FireAndForgetTaskModel FireAndForgetTasks = 1;
+}

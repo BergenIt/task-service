@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "TaskService.Proto/TaskDescriptorService/TaskDescriptorRequest.proto";
+import "TaskService.Proto/TaskDescriptorService/TaskDescriptorResponse.proto";
+
+service TaskDescriptorService {
+    //Получение списка типов задач и схем их данных
+    rpc GetTaskDescriptors(GetTaskDescriptorsRequest) returns (TaskDescriptors);
+}
+

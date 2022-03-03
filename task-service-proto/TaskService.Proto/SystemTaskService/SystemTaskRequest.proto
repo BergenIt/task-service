@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "google/protobuf/duration.proto";  
+
+import "DatabaseExtension.Proto/Filters/Filter.proto";
+
+message GetSystemTasksRequest
+{
+    DatabaseExtension.Filter Filter = 1;
+}
+
+message PauseSystemTaskRequest
+{
+    repeated string Ids = 1;
+}
+
+message UnpauseSystemTaskRequest
+{
+    repeated string Ids = 1;
+}
+
+message ChangeSystemTaskIntervalModel
+{
+    string Id = 1;
+    google.protobuf.Duration Interval = 2;
+}
+
+message ChangeSystemTaskIntervalRequest
+{
+    repeated ChangeSystemTaskIntervalModel ChangeSystemTaskIntervals = 1;
+}

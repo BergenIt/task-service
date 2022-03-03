@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "google/protobuf/duration.proto";  
+import "google/protobuf/timestamp.proto";  
+import "google/protobuf/wrappers.proto";
+
+import "TaskService.Proto/TaskKeyModel.proto";
+
+message ExecutedUserTask
+{
+    //execute id
+    string Id = 1;
+
+    string JobType = 2;
+
+    google.protobuf.Timestamp StartAt = 3;
+    google.protobuf.Timestamp EndAt = 4;
+
+    //nullable region
+    google.protobuf.Duration Interval = 5;
+    google.protobuf.UInt32Value Repeated = 6;
+    //!nullable region
+
+    map<string, string> Data = 7;
+
+    TaskKeyModel TaskKey = 8;
+
+    google.protobuf.StringValue Error = 9;
+}
+
+message ScheduleUserTask
+{
+    //duplicate TaskKey TriggerKey
+    string Id = 1;
+
+    string JobType = 2;
+
+    google.protobuf.Timestamp StartAt = 3;
+
+    //nullable region
+    google.protobuf.Timestamp LastStart = 4;
+    google.protobuf.Timestamp NextStart = 5;
+
+    google.protobuf.Duration Interval = 6;
+    google.protobuf.UInt32Value Repeated = 7;
+    //!nullable region
+
+    map<string, string> Data = 8;
+
+    TaskKeyModel TaskKey = 9;
+}
+
+message ExecutedUserTaskList{
+    repeated ExecutedUserTask ExecutedUserTasks = 1;
+
+    int64 CountItems = 2;
+}
+
+message ScheduleUserTaskList{
+    repeated ScheduleUserTask ScheduleUserTasks = 1;
+
+    int64 CountItems = 2;
+}

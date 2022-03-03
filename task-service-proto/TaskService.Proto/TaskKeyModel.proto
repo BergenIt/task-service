@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+message TaskKeyModel {
+  string TriggerKey = 1;
+  string TaskType = 2;
+}
+
+message TaskKeyList {
+  repeated TaskKeyModel TaskKeys = 1;
+}

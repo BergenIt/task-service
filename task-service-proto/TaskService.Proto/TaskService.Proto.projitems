@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4a8244a8-f7bb-49d1-b693-54baf877a785</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TaskService.Proto</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)TaskKeyModel.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)TaskDescriptorService\TaskDescriptorResponse.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)TaskDescriptorService\TaskDescriptorRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)TaskDescriptorService\TaskDescriptorService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)LifecycleIndexService\LifecycleIndexModel.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)LifecycleIndexService\LifecycleIndexRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)LifecycleIndexService\TaskLifecycleIndexService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)TaskRegisterService\TaskRegisterLog.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)TaskRegisterService\TaskRegisterRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)TaskRegisterService\TaskRegisterService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserScheduleService\UserScheduleRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserScheduleService\UserScheduleService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)SystemTaskService\SystemTask.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)SystemTaskService\SystemTaskRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)SystemTaskService\SystemTaskService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)FireAndForgetService\FireAndForgetRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)FireAndForgetService\FireAndForgetService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+  </ItemGroup>
+</Project>

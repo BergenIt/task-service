@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "TaskService.Proto";
+
+package TaskService;
+
+import "TaskService.Proto/FireAndForgetService/FireAndForgetRequest.proto";
+import "TaskService.Proto/TaskKeyModel.proto";
+
+service FireAndForgetService {
+    //Put
+    rpc FireAndForgetTask(FireAndForgetTaskRequest) returns (TaskKeyList);
+    //Put
+    rpc FireAndForgetExistTask(FireAndForgetExistTaskRequest) returns (TaskKeyList);
+}
+

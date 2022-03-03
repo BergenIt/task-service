@@ -1,0 +1,9 @@
+UserJobs:
+  Тест:
+    Schema:
+        Id : uuid
+        ConfigId : long
+    Sender:
+      Type: Http
+      Router: 
+        Uri: http://tester/api/test/long

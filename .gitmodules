@@ -1,9 +1,0 @@
-[submodule "bis-user-service-proto"]
-	path = bis-user-service-proto
-	url = ../../c_mvp/bis-user-service-proto.git
-[submodule "proto-client-library"]
-	path = proto-client-library
-	url = ../../yvturbin/proto-client-library.git
-[submodule "database-extension"]
-	path = database-extension
-	url = ../../ems2/middle/library/database-extension.git

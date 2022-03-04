@@ -6,7 +6,6 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["TaskService.Main/TaskService.csproj", "TaskService.Main/"]
-COPY ["proto-client-library/ProtobufClient.csproj", "proto-client-library/"]
 COPY ["TaskService.Core/TaskService.Core.csproj", "TaskService.Core/"]
 COPY ["database-extension/DatabaseExtension.csproj", "database-extension/"]
 RUN dotnet restore "TaskService.Main/TaskService.csproj"
